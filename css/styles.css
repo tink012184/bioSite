@@ -1,0 +1,167 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Style rules for body and images */
+body {
+  background: linear-gradient(to right, #f2a2ce, #ffcccc, #f2a2ce);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Style rules for mobile */
+/* Style rules for header */
+header {
+  top: 0;
+  height: 25%;
+}
+
+header img {
+  margin: 0 auto;
+}
+
+/* Nav Style rules */
+nav {
+  text-align: center;
+  background-color: black;
+  font-size: 2em;
+}
+
+nav ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+nav li {
+  font-size: 1.5em;
+  border-top: 2px solid hotpink;
+}
+
+nav li:first-child {
+  border-top: none;
+}
+
+nav li a {
+  color: white;
+  text-decoration: none;
+}
+
+.mobile {
+  display: block;
+}
+
+.tablet-desktop {
+  display: none;
+}
+
+/* Style rules for main content */
+
+main {
+  padding: 2%;
+}
+
+footer {
+  background-color: black;
+}
+
+/* Media Query for Tablet Viewport */
+@media screen and (min-width: 630px), print {
+  /* Tablet Viewport: Show tablet-desktop-class, hide mobile class */
+  .tablet-desktop {
+    display: block;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  /* Table Viewport: Style rule for header */
+  header {
+    position: static;
+    padding-bottom: 2%;
+  }
+
+  /* Table Viewport: Style rules for nav area */
+  nav li {
+    border-top: none;
+    display: inline-block;
+    border-right: 1px solid #fff;
+  }
+
+  nav li:last-child {
+    border-right: none;
+  }
+
+  nav li a {
+    padding: 0.1em 0.75em;
+  }
+
+  /* Tablet Viewport: Style rules for main content area */
+  main ul {
+    margin: 0 0 4% 10%;
+  }
+}
+
+/* Media Query for Desktop Viewport */
+@media screen and (min-width: 1015px), print {
+  /*Desktop Viewport: Style rule for Header */
+  header {
+    width: 25%;
+    float: left;
+    padding-bottom: 0;
+  }
+
+  /*desktop Viewport: Style rules for nav area */
+  nav {
+    float: right;
+    width: 70%;
+    margin: 4em 1em 0 0;
+  }
+
+  nav ul {
+    text-align: right;
+  }
+
+  nav li {
+    border: none;
+  }
+
+  nav li a {
+    padding: 0.5em 1em;
+  }
+
+  nav li a:hover {
+    color: palevioletred;
+    background-color: black;
+  }
+
+  /*Desktop Viewport: Style Rules for main content */
+  main {
+    clear: left;
+  }
+
+  main h1 {
+    font-size: 1.8em;
+  }
+}
+
+/* Media Query for Large Desktop Viewports */
+@media screen and (min-width: 1921px) {
+  body img {
+    margin: 0 auto;
+  }
+}
+
+/* Media Query for Print */
+@media print {
+  body {
+    background-color: #fff;
+    color: #000;
+  }
+}
