@@ -124,7 +124,7 @@ footer {
     justify-content: flex-end;
     align-items: center;
     background-color: black;
-    padding: 20px 40px;
+    padding: 15px 20px;
     order: 1; /* nav comes before header */
     position: sticky;
     top: 0; /* Stick at the top of the viewport */
@@ -169,6 +169,10 @@ footer {
     grid-template-columns: auto auto;
     gap: 20px;
   }
+}
+
+@media screen and (min-width: 1015px), print {
+  /*Small desktop Viewport: Sty;e rules for Header */
 }
 
 /* Media Query for Desktop Viewport */
