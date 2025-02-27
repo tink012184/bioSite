@@ -28,7 +28,7 @@ header {
 
 #heroImage {
   margin: 0 auto;
-  width: 100%;
+  max-width: 100%;
   height: auto;
   display: block;
 }
@@ -37,6 +37,8 @@ header {
 nav {
   background-color: black;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  max-width: 100%;
+  padding: 5px;
 }
 
 nav ul {
@@ -51,11 +53,10 @@ nav li {
 
 nav ul li a {
   display: block;
-  padding: 10px;
   text-decoration: none;
   background: black;
   color: lightpink;
-  width: 100%;
+  max-width: 100%;
 }
 
 nav li:first-child {
@@ -81,13 +82,16 @@ main {
 }
 
 table {
-  max-width: 80%;
-  margin: 0 42%;
+  max-width: 50%;
+  margin: 10px auto;
   border-collapse: collapse;
+  width: 100%;
+  outline: 2px solid red;
 }
 
 th,
 td {
+  width: 50%;
   padding: 20px;
   text-align: center;
   border: 0.2em solid black;
@@ -132,6 +136,7 @@ footer {
   .header-nav-container {
     display: flex;
     flex-direction: column;
+    max-width: 100%;
   }
 
   header {
@@ -146,18 +151,17 @@ footer {
     justify-content: flex-end;
     align-items: center;
     background-color: black;
-    padding: 15px 10px;
     order: 1; /* nav comes before header */
     position: sticky;
     top: 0; /* Stick at the top of the viewport */
     z-index: 1000;
+    max-width: 100%;
   }
 
   nav ul {
     list-style-type: none;
     display: flex;
-    gap: 2em;
-    padding: 10px;
+    gap: 1.5em;
     margin: 0;
   }
 
@@ -168,7 +172,6 @@ footer {
 
   nav ul li a {
     display: inline-block;
-    padding: 10px;
     line-height: 1;
     text-decoration: none;
     background: black;
@@ -211,15 +214,12 @@ footer {
     justify-content: flex-end;
     align-items: center;
     background-color: black;
-    padding: 20px;
   }
 
   nav ul {
     list-style-type: none;
     display: flex;
     gap: 5em;
-    padding: 10px;
-    margin: 0;
   }
 
   nav li {
@@ -228,7 +228,6 @@ footer {
 
   nav ul li a {
     display: inline-block;
-    padding: 10px;
     line-height: 1;
     text-decoration: none;
     background: black;
@@ -241,7 +240,6 @@ footer {
     border-color: palevioletred;
     color: palevioletred;
     background-color: black;
-    padding: 10px 20px;
   }
 
   /*Desktop Viewport: Style Rules for main content */
@@ -262,7 +260,8 @@ footer {
 
 /* Media Query for Large Desktop Viewports */
 @media screen and (min-width: 1921px) {
-  body img {
+  body {
+    max-width: 75%;
     margin: 0 auto;
   }
 }
