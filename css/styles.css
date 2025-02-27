@@ -83,15 +83,15 @@ main {
 
 table {
   max-width: 50%;
-  margin: 10px auto;
+  width: 50%;
+  margin: 20px auto;
   border-collapse: collapse;
-  width: 100%;
-  outline: 2px solid red;
+  table-layout: fixed;
 }
 
 th,
 td {
-  width: 50%;
+  width: 5%;
   padding: 20px;
   text-align: center;
   border: 0.2em solid black;
