@@ -110,7 +110,7 @@
         {
           src: "./images/eliArmsInTheAir.png",
           alt: "Eli with his arms in the air",
-          caption: "Excited ELi with his arms in the air",
+          caption: "Excited Eli with his arms in the air",
         },
         {
           src: "./images/eliReadyForCamp.png",
@@ -121,18 +121,28 @@
           src: "./images/twoInOne.png",
           alt: "Eli with his arms in the air on the left, Eli with his backpack on waiting to go to camp on the right",
           caption:
-            "Excited ELi with his arms in the air    Eli getting ready to go to camp with his classmates",
+            "Excited Eli with his arms in the air - Eli getting ready to go to camp with his classmates",
         },
       ];
       //Function to open popup on screen
       function openPopup(index) {
+        const popup = document.getElementById("popup");
         const popupImage = document.getElementById("popup-image");
         const popupCaption = document.getElementById("popup-caption");
-        popupImage.src = images[index].src;
-        popupImage.alt = images[index].alt;
-        popupCaption.textContent = images[index].caption;
-        document.getElementById("popup").style.display = "flex";
+
+        if (images[index]) {
+          popupImage.src = images[index].src;
+          popupImage.alt = images[index].alt;
+          popupCaption.textContent = images[index].caption;
+          popup.style.display = "flex";
+
+          // Debugging: Log the image source
+          console.log("Image Source:", popupImage.src);
+        } else {
+          console.error("Invalid index for openPopup:", index);
+        }
       }
+
       //Event Handler closed when screen is clicked
       document.addEventListener("click", function (event) {
         const popup = document.getElementById("popup");
