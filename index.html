@@ -67,23 +67,84 @@
       </p>
       <table class="mobile">
         <tr>
-          <th>Filler</th>
+          <!--Row One-->
+          <th>Try Me!</th>
         </tr>
         <tr>
-          <td>Blah</td>
+          <!--Row Two-->
+          <td>
+            <button onclick="openPopup(2)" style="background: none">
+              Click Here!
+            </button>
+          </td>
         </tr>
       </table>
       <table class="tablet-desktop">
         <tr>
-          <th>Filler</th>
-          <th>Filler</th>
+          <!--Row One-->
+          <th colspan="2">Try Me</th>
         </tr>
         <tr>
-          <td>Blah</td>
-          <td>Blah</td>
+          <!--Row Two-->
+          <!--Element Not in book being used here: Instance One-->
+          <td>
+            <button onclick="openPopup(0)">Click Here!</button>
+          </td>
+          <td>
+            <button onclick="openPopup(1)">Click Here!</button>
+          </td>
         </tr>
       </table>
+      <div id="popup" class="popup-container">
+        <div class="popup-content">
+          <img id="popup-image" src="" alt="" />
+          <div id="popup-caption" class="popup-caption"></div>
+        </div>
+      </div>
     </main>
     <footer></footer>
+    <!--Element Not in book being used here: Instance Two-->
+    <script>
+      // Array of Images
+      const images = [
+        {
+          src: "./images/eliArmsInTheAir.png",
+          alt: "Eli with his arms in the air",
+          caption: "Excited ELi with his arms in the air",
+        },
+        {
+          src: "./images/eliReadyForCamp.png",
+          alt: "Eli with his backpack on waiting to go to camp",
+          caption: "Eli getting ready to go to camp with his classmates",
+        },
+        {
+          src: "./images/twoInOne.png",
+          alt: "Eli with his arms in the air on the left, Eli with his backpack on waiting to go to camp on the right",
+          caption:
+            "Excited ELi with his arms in the air    Eli getting ready to go to camp with his classmates",
+        },
+      ];
+      //Function to open popup on screen
+      function openPopup(index) {
+        const popupImage = document.getElementById("popup-image");
+        const popupCaption = document.getElementById("popup-caption");
+        popupImage.src = images[index].src;
+        popupImage.alt = images[index].alt;
+        popupCaption.textContent = images[index].caption;
+        document.getElementById("popup").style.display = "flex";
+      }
+      //Event Handler closed when screen is clicked
+      document.addEventListener("click", function (event) {
+        const popup = document.getElementById("popup");
+        const popupContent = document.querySelector(".popup-content");
+
+        if (
+          popup.style.display === "flex" &&
+          !popupContent.contains(event.target)
+        ) {
+          popup.style.display = "none";
+        }
+      });
+    </script>
   </body>
 </html>
