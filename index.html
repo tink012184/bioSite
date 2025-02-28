@@ -130,17 +130,11 @@
         const popupImage = document.getElementById("popupImage");
         const popupCaption = document.getElementById("popupCaption");
 
-        if (images[index]) {
-          popupImage.src = images[index].src;
-          popupImage.alt = images[index].alt;
-          popupCaption.textContent = images[index].caption;
+        popupImage.src = images[index].src;
+        popupImage.alt = images[index].alt;
+        popupCaption.textContent = images[index].caption;
 
-          popup.style.display = "flex"; // Show popup
-
-          console.log("Popup is now visible.");
-        } else {
-          console.error("Invalid index for openPopup:", index);
-        }
+        popup.style.display = "flex"; // Show popup
       }
 
       // Fix the event listener to prevent immediate closure
@@ -152,7 +146,6 @@
           // Close only if clicking outside the popup-content
           if (!popupContent.contains(event.target)) {
             this.style.display = "none";
-            console.log("Popup closed.");
           }
         });
     </script>
