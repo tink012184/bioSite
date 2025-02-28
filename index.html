@@ -95,13 +95,13 @@
           </td>
         </tr>
       </table>
-      <div id="popup" class="popup-container">
-        <div class="popup-content">
-          <img id="popup-image" src="" alt="" />
-          <div id="popup-caption" class="popup-caption"></div>
-        </div>
-      </div>
     </main>
+    <div id="popup" class="popup-container">
+      <div class="popup-content">
+        <img id="popupImage" src="" alt="" />
+        <div id="popupCaption" class="popup-caption"></div>
+      </div>
+    </div>
     <footer></footer>
     <!--Element Not in book being used here: Instance Two-->
     <script>
@@ -124,37 +124,37 @@
             "Excited Eli with his arms in the air - Eli getting ready to go to camp with his classmates",
         },
       ];
-      //Function to open popup on screen
+      // Function to open popup
       function openPopup(index) {
         const popup = document.getElementById("popup");
-        const popupImage = document.getElementById("popup-image");
-        const popupCaption = document.getElementById("popup-caption");
+        const popupImage = document.getElementById("popupImage");
+        const popupCaption = document.getElementById("popupCaption");
 
         if (images[index]) {
           popupImage.src = images[index].src;
           popupImage.alt = images[index].alt;
           popupCaption.textContent = images[index].caption;
-          popup.style.display = "flex";
 
-          // Debugging: Log the image source
-          console.log("Image Source:", popupImage.src);
+          popup.style.display = "flex"; // Show popup
+
+          console.log("Popup is now visible.");
         } else {
           console.error("Invalid index for openPopup:", index);
         }
       }
 
-      //Event Handler closed when screen is clicked
-      document.addEventListener("click", function (event) {
-        const popup = document.getElementById("popup");
-        const popupContent = document.querySelector(".popup-content");
+      // Fix the event listener to prevent immediate closure
+      document
+        .getElementById("popup")
+        .addEventListener("click", function (event) {
+          const popupContent = document.querySelector(".popup-content");
 
-        if (
-          popup.style.display === "flex" &&
-          !popupContent.contains(event.target)
-        ) {
-          popup.style.display = "none";
-        }
-      });
+          // Close only if clicking outside the popup-content
+          if (!popupContent.contains(event.target)) {
+            this.style.display = "none";
+            console.log("Popup closed.");
+          }
+        });
     </script>
   </body>
 </html>
